@@ -20,7 +20,7 @@ class Place(graphene.ObjectType):
     The API representation of a "Place"
     """
 
-    id = graphene.ID(description="the place ID in the geo backend")
+    id = graphene.Int(description="the place ID in the geo backend")
     name = graphene.String(description="human-readable place name")
     center = GeoJSON(description="center of this place in geojson format")
     polygon = GeoJSON(description="polygon representing this place in geojson format")
@@ -40,6 +40,7 @@ class Query(graphene.ObjectType):
     """
     The root query object
     """
+
     nearby = graphene.List(
         Place,
         lat=graphene.Float(
