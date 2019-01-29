@@ -1,0 +1,15 @@
+version: '3'
+services:
+  graphql-geo:
+    image: "graphql-geo:dev"
+    build:
+      context: ../../
+      dockerfile: etc/docker/Dockerfile-dev
+    ports:
+      - "5000:5000"
+    volumes:
+      - ../../:/home/graphql-geo
+    environment:
+      FLASK_ENV: development
+      POSTGRES_URL: "postgresql://postgres:password@postgis:5432/postgres"
+      PYTHONPATH: /home/graphql-geo

@@ -1,0 +1,9 @@
+FROM python:3.7.2-alpine3.8
+
+COPY . /home/graphql-geo
+
+RUN pip install -r /home/graphql-geo/requirements.txt
+
+# TODO: build a wheel + use WSGI, copy the wheel over using multiple build steps
+
+CMD bin/geo

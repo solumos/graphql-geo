@@ -1,0 +1,12 @@
+version: '3'
+services:
+  postgis:
+    image: mdillon/postgis:11
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: password
+volumes:
+  db-data:
