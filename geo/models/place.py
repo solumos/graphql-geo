@@ -21,6 +21,7 @@ class Place(Base):
     A simple model denoting a "place", which could be any geographical entity
     with a name, coordinates, and a polygon.
     """
+
     __tablename__ = "place"
 
     id = sa.Column(sa.BigInteger, primary_key=True)
