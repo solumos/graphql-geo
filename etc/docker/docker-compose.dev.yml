@@ -9,6 +9,8 @@ services:
       - "5000:5000"
     volumes:
       - ../../:/home/graphql-geo
+    depends_on:
+      - postgis
     environment:
       FLASK_ENV: development
       POSTGRES_URL: "postgresql://postgres:password@postgis:5432/postgres"
