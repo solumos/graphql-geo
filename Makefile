@@ -36,7 +36,7 @@ restart-db:
 	$(COMPOSE_CMD) restart $(APP_NAME)
 
 up:
-	$(COMPOSE_CMD) up --build
+	$(COMPOSE_CMD) up --build -d
 
 down:
 	$(COMPOSE_CMD) down
@@ -49,6 +49,12 @@ logs:
 
 shell:
 	$(COMPOSE_CMD) run graphql-geo /bin/sh
+
+test:
+	$(COMPOSE_CMD) run graphql-geo /bin/sh -c "python geo/test/integration.py"
+
+alembic-upgrade:
+	$(COMPOSE_CMD) run graphql-geo /bin/sh -c "alembic upgrade head"
 
 status:
 	$(COMPOSE_CMD) status
@@ -68,5 +74,7 @@ black:
 	down-volumes
 	logs
 	shell
+	test
+	alembic-upgrade
 	status
 	black
