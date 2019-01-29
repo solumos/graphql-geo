@@ -1,8 +1,9 @@
 # GraphQL-Geo
 
 GraphQL Geo provides two simple geocoding api's:
-    - `nearby`
-    - `reverseGeolocate`
+
+   - `nearby`
+   - `reverseGeolocate`
 
 The application is written in Python 3/Flask, and exposes these API's via GraphQL. The underlying datastore is PostgreSQL
 w/ PostGIS extensions enabled. Alembic is also used for database migrations.
@@ -14,7 +15,8 @@ w/ PostGIS extensions enabled. Alembic is also used for database migrations.
 GraphQL Geo relies on a dockerized development environment. This requires a recent version of the docker engine,
 docker machine and docker compose. This project was built on Docker Desktop CE, which corresponds to the
 following versions:
-    - Docker Desktop CE Version 2.0.0.2 (30215)
+    
+   - Docker Desktop CE Version 2.0.0.2 (30215)
         - Engine: 18.09.1
         - Compose: 1.23.2
         - Machine: 0.16.1
